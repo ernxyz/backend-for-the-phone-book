@@ -7,7 +7,7 @@ if (process.argv.length < 3){
 
 const password = process.argv[2]
 
-const URL = 
+const URL =
   `mongodb+srv://ernej29:${password}@cluster0.dxtcoaq.mongodb.net/phonebook-app?retryWrites=true&w=majority`
 
 mongoose.set("strictQuery", false)
@@ -27,7 +27,7 @@ if (process.argv.length > 3) {
     name: name,
     number: number,
   })
-  
+
   person
     .save()
     .then(result => {
@@ -39,7 +39,7 @@ if (process.argv.length > 3) {
     result.forEach(person => {
       console.log(person);
     })
-  
+
     mongoose.connection.close()
   })
 }
